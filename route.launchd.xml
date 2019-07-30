@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- debug config -->
+<launch>
+	<copy file="route.net.xml" />
+	<copy file="route.rou.xml" />
+	<copy file="route.settings.xml" />
+	<copy file="route.sumo.cfg" type="config" />
+</launch>
+
