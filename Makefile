@@ -1,12 +1,12 @@
 #
-# OMNeT++/OMNEST Makefile for atzeng-app1-test2
+# OMNeT++/OMNEST Makefile for atzeng-app1
 #
 # This file was generated with the command:
 #  opp_makemake -f --deep -O out -KVEINS_PROJ=C:/Users/audre/Documents/cmu2019summer/research/veins-4.7 -I"C:/Users/sakshi/source/veins-4.7/src" -I. -I$$\(VEINS_PROJ\)/src -Isrc -L$$\(VEINS_PROJ\)/src -lveins$$\(D\)
 #
 
 # Name of target to be created (-o option)
-TARGET = atzeng-app1-test2$(D)$(EXE_SUFFIX)
+TARGET = atzeng-app1$(D)$(EXE_SUFFIX)
 TARGET_DIR = .
 
 # User interface (uncomment one) (-u option)

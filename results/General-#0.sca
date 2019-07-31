@@ -1,0 +1,138 @@
+version 2
+run General-0-20190731-12:48:35-10040
+attr configname General
+attr datetime 20190731-12:48:35
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Scene
+attr processid 10040
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.debug false
+param **.coreDebug false
+param *.playgroundSizeX 2500m
+param *.playgroundSizeY 2500m
+param *.playgroundSizeZ 50m
+param *.annotations.draw true
+param *.obstacles.debug false
+param *.obstacles.obstacles "xmldoc(\"config.xml\", \"//AnalogueModel[@type='SimpleObstacleShadowing']/obstacles\")"
+param *.manager.updateInterval 1s
+param *.manager.host "\"localhost\""
+param *.manager.port 9999
+param *.manager.autoShutdown true
+param *.manager.launchConfig "xmldoc(\"route.launchd.xml\")"
+param *.rsu[0].mobility.x 2000
+param *.rsu[0].mobility.y 2000
+param *.rsu[0].mobility.z 3
+param *.rsu[*].applType "\"App1RSU\""
+param *.rsu[*].appl.headerLength "80 bit"
+param *.rsu[*].appl.sendBeacons false
+param *.rsu[*].appl.dataOnSch false
+param *.rsu[*].appl.beaconInterval 1s
+param *.rsu[*].appl.beaconUserPriority 7
+param *.rsu[*].appl.dataUserPriority 5
+param *.connectionManager.sendDirect true
+param *.connectionManager.maxInterfDist 2600m
+param *.connectionManager.drawMaxIntfDist false
+param *.**.nic.mac1609_4.useServiceChannel false
+param *.**.nic.mac1609_4.txPower 20mW
+param *.**.nic.mac1609_4.bitrate 6Mbps
+param *.**.nic.phy80211p.sensitivity -89dBm
+param *.**.nic.phy80211p.useThermalNoise true
+param *.**.nic.phy80211p.thermalNoise -110dBm
+param *.**.nic.phy80211p.decider "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.analogueModels "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.usePropagationDelay true
+param *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
+param *.node[*].applType "\"App1\""
+param *.node[*].appl.headerLength "80 bit"
+param *.node[*].appl.sendBeacons false
+param *.node[*].appl.dataOnSch false
+param *.node[*].appl.beaconInterval 1s
+param *.node[*].veinsmobilityType.debug true
+param *.node[*].veinsmobility.x 0
+param *.node[*].veinsmobility.y 0
+param *.node[*].veinsmobility.z 1.895
+
+scalar Scene.node[0].appl generatedWSMs 29
+scalar Scene.node[0].appl receivedWSMs 0
+scalar Scene.node[0].appl generatedBSMs 0
+scalar Scene.node[0].appl receivedBSMs 0
+scalar Scene.node[0].appl generatedWSAs 0
+scalar Scene.node[0].appl receivedWSAs 0
+scalar Scene.node[0].nic.phy80211p busyTime 0
+scalar Scene.node[0].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Scene.node[0].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Scene.node[0].nic.mac1609_4 SentPackets 0
+scalar Scene.node[0].nic.mac1609_4 SentAcknowledgements 0
+scalar Scene.node[0].nic.mac1609_4 SNIRLostPackets 0
+scalar Scene.node[0].nic.mac1609_4 RXTXLostPackets 0
+scalar Scene.node[0].nic.mac1609_4 TotalLostPackets 0
+scalar Scene.node[0].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Scene.node[0].nic.mac1609_4 TooLittleTime 0
+scalar Scene.node[0].nic.mac1609_4 TimesIntoBackoff 0
+scalar Scene.node[0].nic.mac1609_4 SlotsBackoff 0
+scalar Scene.node[0].nic.mac1609_4 NumInternalContention 0
+scalar Scene.node[0].nic.mac1609_4 totalBusyTime 0
+scalar Scene.node[0].veinsmobility startTime 11
+scalar Scene.node[0].veinsmobility totalTime 29
+scalar Scene.node[0].veinsmobility stopTime 40
+scalar Scene.node[0].veinsmobility minSpeed 3.9572089270348
+scalar Scene.node[0].veinsmobility maxSpeed 13.88245620888
+scalar Scene.node[0].veinsmobility totalDistance 363.73488945082
+scalar Scene.node[0].veinsmobility totalCO2Emission 78.347094023914
+scalar Scene.node[1].appl generatedWSMs 19
+scalar Scene.node[1].appl receivedWSMs 0
+scalar Scene.node[1].appl generatedBSMs 0
+scalar Scene.node[1].appl receivedBSMs 0
+scalar Scene.node[1].appl generatedWSAs 0
+scalar Scene.node[1].appl receivedWSAs 0
+scalar Scene.node[1].nic.phy80211p busyTime 0
+scalar Scene.node[1].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Scene.node[1].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Scene.node[1].nic.mac1609_4 SentPackets 0
+scalar Scene.node[1].nic.mac1609_4 SentAcknowledgements 0
+scalar Scene.node[1].nic.mac1609_4 SNIRLostPackets 0
+scalar Scene.node[1].nic.mac1609_4 RXTXLostPackets 0
+scalar Scene.node[1].nic.mac1609_4 TotalLostPackets 0
+scalar Scene.node[1].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Scene.node[1].nic.mac1609_4 TooLittleTime 0
+scalar Scene.node[1].nic.mac1609_4 TimesIntoBackoff 0
+scalar Scene.node[1].nic.mac1609_4 SlotsBackoff 0
+scalar Scene.node[1].nic.mac1609_4 NumInternalContention 0
+scalar Scene.node[1].nic.mac1609_4 totalBusyTime 0
+scalar Scene.node[1].veinsmobility startTime 21
+scalar Scene.node[1].veinsmobility totalTime 19
+scalar Scene.node[1].veinsmobility stopTime 40
+scalar Scene.node[1].veinsmobility minSpeed 3.8877043787725
+scalar Scene.node[1].veinsmobility maxSpeed 13.885681089771
+scalar Scene.node[1].veinsmobility totalDistance 225.67287627962
+scalar Scene.node[1].veinsmobility totalCO2Emission 58.188981152972
+scalar Scene.manager roiArea 0
+scalar Scene.rsu[0].appl generatedWSMs 0
+scalar Scene.rsu[0].appl receivedWSMs 0
+scalar Scene.rsu[0].appl generatedBSMs 0
+scalar Scene.rsu[0].appl receivedBSMs 0
+scalar Scene.rsu[0].appl generatedWSAs 0
+scalar Scene.rsu[0].appl receivedWSAs 0
+scalar Scene.rsu[0].nic.phy80211p busyTime 0
+scalar Scene.rsu[0].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Scene.rsu[0].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Scene.rsu[0].nic.mac1609_4 SentPackets 0
+scalar Scene.rsu[0].nic.mac1609_4 SentAcknowledgements 0
+scalar Scene.rsu[0].nic.mac1609_4 SNIRLostPackets 0
+scalar Scene.rsu[0].nic.mac1609_4 RXTXLostPackets 0
+scalar Scene.rsu[0].nic.mac1609_4 TotalLostPackets 0
+scalar Scene.rsu[0].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Scene.rsu[0].nic.mac1609_4 TooLittleTime 0
+scalar Scene.rsu[0].nic.mac1609_4 TimesIntoBackoff 0
+scalar Scene.rsu[0].nic.mac1609_4 SlotsBackoff 0
+scalar Scene.rsu[0].nic.mac1609_4 NumInternalContention 0
+scalar Scene.rsu[0].nic.mac1609_4 totalBusyTime 0
+
