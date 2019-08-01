@@ -50,15 +50,23 @@ void App1::onBSM(BasicSafetyMessage* bsm) {
 void App1::onWSM(WaveShortMessage* wsm) {
     //Your application has received a data message from another car or RSU
     //code for handling the message goes here, see TraciDemo11p.cc for examples
-    findHost()->getDisplayString().updateWith("r=16,green");
-    std::string id = "";
-    if (wsm->getChannelNumber() == 1) {
-        int speed = atoi(wsm->getWsmData());
+    /*findHost()->getDisplayString().updateWith("r=16,green");
+    EV << "RECEIVED WSM" << std::endl;
+    std::string id = "car1";
+    if ((id.compare(traciVehicle->getTypeId())) == 0) {
+        traciVehicle->setSpeedMode(0000);
+        traciVehicle->setSpeed(8.0);
+    } else if (wsm->getChannelNumber() == 1) {
+        int speed = std::stod(wsm->getWsmData());
+        traciVehicle->setSpeedMode(0000);
         traciVehicle->setSpeed(speed);
-    } else {
-        delete(wsm);
+    }*/
+    findHost()->getDisplayString().updateWith("r=16,green");
+    std::string id = "car1";
+    if ((id.compare(traciVehicle->getTypeId())) == 0) {
+        traciVehicle->setSpeedMode(0000);
+        traciVehicle->setSpeed(3.0);
     }
-
 }
 
 void App1::onWSA(WaveServiceAdvertisment* wsa) {
@@ -71,15 +79,22 @@ void App1::handleSelfMsg(cMessage* msg) {
     BaseWaveApplLayer::handleSelfMsg(msg);
     //this method is for self messages (mostly timers)
     //it is important to call the BaseWaveApplLayer function for BSM and WSM transmission
+   /* EV << "SELF MSG" << std::endl;
     std::string id = "car1";
     if (id.compare(traciVehicle->getTypeId()) == 0){
         if (simTime() == 40){
-            EV << "car1 to 10" << std::endl;
-            traciVehicle->setSpeed(10);
+            DBG_APP << "car1 to 10" << std::endl;
+            traciVehicle->setSpeed(10.0);
         } else if (simTime() == 80){
             EV << "car1 to 50" << std::endl;
-            traciVehicle->setSpeed(50);
+            traciVehicle->setSpeed(50.0);
         }
+    }*/
+    if (WaveShortMessage* wsm = dynamic_cast<WaveShortMessage*>(msg)) {
+        delete(wsm);
+    }
+    else {
+        BaseWaveApplLayer::handleSelfMsg(msg);
     }
 }
 
@@ -87,7 +102,7 @@ void App1::handlePositionUpdate(cObject* obj) {
     BaseWaveApplLayer::handlePositionUpdate(obj);
     //the vehicle has moved. Code that reacts to new positions goes here.
     //member variables such as currentPosition and currentSpeed are updated in the parent class
-    if ((simTime() - prevTime >= 1)){ //send wsm every second
+    /*if ((simTime() - prevTime >= 1)){ //send wsm every second
         WaveShortMessage* wsm = new WaveShortMessage();
         populateWSM(wsm);
         std::string s = std::to_string(mobility->getSpeed()); //message: speed
@@ -104,5 +119,11 @@ void App1::handlePositionUpdate(cObject* obj) {
 
         sendDelayedDown(wsm, uniform(100,1000));
         lastDroveAt = simTime();
-    }
+    }*/
+    if (simTime() - lastDroveAt >= 1) {
+           WaveShortMessage* wsm =new WaveShortMessage();
+           populateWSM(wsm);
+           sendDelayedDown(wsm, uniform(100,1000));
+           lastDroveAt = simTime();
+       }
 }
